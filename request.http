@@ -36,3 +36,55 @@ Content-Type: application/json
 ###
 DELETE  http://localhost:3100/api/v1/workers/651b1e8c5abae6ffe27cf8c5 HTTP/1.1
 Content-Type: application/json
+
+////////////////////////////////////////////////////////////////////////////////////
+
+
+###
+POST http://localhost:3100/api/v1/persons/new-person HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstname": "Person123",
+    "lastname": "Person123",
+    "addres": {
+        "zip_code":"321",
+        "city":"Chinchi",
+        "municipality":"Caldas",
+        "country":"Colombia"
+    },
+    "pets":["Perro","Gato"],
+    "work": {
+        "id_work": "123",
+        "job":"Obrero",
+        "company":{
+            "id_company":"0000",
+            "name_company":"UAM"
+        }
+    }
+}
+
+###
+GET http://localhost:3100/api/v1/persons HTTP/1.1
+Content-Type: application/json
+
+###
+GET http://localhost:3100/api/v1/persons/651b295ee5f879cee9a3ac1f HTTP/1.1
+Content-Type: application/json
+
+###
+PATCH http://localhost:3100/api/v1/persons/651b2aa9e5f879cee9a3ac38 HTTP/1.1
+Content-Type: application/json
+
+{
+    "addres": {
+        "zip_code":"321",
+        "city":"Riosucio",
+        "municipality":"Caldas",
+        "country":"Colombia"
+    }
+}
+
+###
+DELETE  http://localhost:3100/api/v1/persons/651b295ee5f879cee9a3ac1f HTTP/1.1
+Content-Type: application/json
